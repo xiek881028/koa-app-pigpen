@@ -1,0 +1,12 @@
+extends ../layouts/api.html.pug
+
+prepend title
+  = `${__('views.api.index.title')} - `
+
+append page_stylesheets
+  link(rel="stylesheet" type="text/css" href=`/css/api.css?${version}`)
+
+append page_javascripts
+  script(type="text/javascript" src=`/js/api.js?${version}`)
+
+block content

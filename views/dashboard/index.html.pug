@@ -1,0 +1,16 @@
+extends ../layouts/application.html.pug
+
+prepend title
+  = `${__('views.dashboard.index.title')} - `
+
+append page_stylesheets
+  link(rel="stylesheet" type="text/css" href=`/css/dashboard.css?${version}`)
+
+append page_javascripts
+  script(type="text/javascript" src=`/js/dashboard.js?${version}`)
+
+block content
+  h1 dashboard/index
+  p Find me in views/dashboard/index.html.pug
+  p #{__('app.words.hello')}, #{current_user.username},
+    a(href="/user/logout" data-user="logout" data-method="post")= __('app.words.logout')

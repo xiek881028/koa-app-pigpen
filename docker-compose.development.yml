@@ -1,0 +1,32 @@
+version: '3'
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile.development
+    restart: unless-stopped
+    ports:
+      - 80
+    volumes:
+      - .:/app
+    environment:
+      APP_MAILER_FROM: ${APP_MAILER_FROM}
+      APP_MAILER_SMTP_ADDRESS: ${APP_MAILER_SMTP_ADDRESS}
+      APP_MAILER_SMTP_PORT: ${APP_MAILER_SMTP_PORT}
+      APP_MAILER_SMTP_USERNAME: ${APP_MAILER_SMTP_USERNAME}
+      APP_MAILER_SMTP_PASSWORD: ${APP_MAILER_SMTP_PASSWORD}
+      APP_MONGO: mongodb://username:password@mongo:27017/app?authSource=user
+      APP_REDIS_MASTER: redis://redis:6379/0
+      APP_SECRET_KEY_BASE: ${APP_SECRET_KEY_BASE}
+      APP_SESSION_KEY: ${APP_SESSION_KEY}
+      # APP_SESSION_DOMAIN: ${APP_SESSION_DOMAIN}
+  mongo:
+    image: mongo:latest
+    restart: unless-stopped
+    ports:
+      - 27017
+  redis:
+    image: redis:latest
+    restart: unless-stopped
+    ports:
+      - 6379

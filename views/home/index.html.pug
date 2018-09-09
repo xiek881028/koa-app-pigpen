@@ -1,0 +1,13 @@
+extends ../layouts/application.html.pug
+
+append title
+  = ` - ${__('views.home.index.title')}`
+
+append page_stylesheets
+  link(rel="stylesheet" type="text/css" href=`/css/home.css?${version}`)
+
+append page_javascripts
+  script(type="text/javascript" src=`/js/home.js?${version}`)
+
+block content
+  #home(is="BaseTransitionBox")

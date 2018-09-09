@@ -1,0 +1,13 @@
+extends ../layouts/application.html.pug
+
+prepend title
+  = `${__('views.home.error.title')} - `
+
+append page_stylesheets
+  link(rel="stylesheet" type="text/css" href=`/css/error.css?${version}`)
+
+append page_javascripts
+  script(type="text/javascript" src=`/js/error.js?${version}`)
+
+block content
+  #error(is="BaseNotFound")

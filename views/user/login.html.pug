@@ -1,0 +1,22 @@
+extends ../layouts/application.html.pug
+
+prepend title
+  = `${__('views.user.login.title')} - `
+
+append page_stylesheets
+  link(rel="stylesheet" type="text/css" href=`/css/user_login.css?${version}`)
+
+append page_javascripts
+  script(type="text/javascript" src=`/js/user_login.js?${version}`)
+
+block content
+  form(method="post")
+    div
+      label= __('views.user.login.username.label')
+      input(type="text" name="username" placeholder=__('views.user.login.username.placeholder'))
+    div
+      label= __('views.user.login.password.label')
+      input(type="password" name="password" placeholder=__('views.user.login.password.placeholder'))
+    div
+      button(type="submit")= __('views.user.login.title')
+

@@ -1,0 +1,4 @@
+FROM xiewulong/nginx-passenger:latest
+
+RUN yum -y install cairo cairo-devel cairomm-devel giflib-devel libjpeg-turbo-devel pango pango-devel pangomm pangomm-devel \
+    && yum clean all

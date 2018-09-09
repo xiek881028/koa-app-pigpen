@@ -1,0 +1,30 @@
+app:
+  name: KOA应用
+  words:
+    hello: 您好
+    login: 登录
+    logout: 注销
+    not_found: 页面未找到
+    operation_succeeded: 操作成功
+    test_mail: 这是一封测试邮件!
+views:
+  api:
+    index:
+      title: API
+  dashboard:
+    index:
+      title: 仪表盘
+  home:
+    error:
+      title: 异常
+    index:
+      title: 一个KOA2的应用模板
+  user:
+    login:
+      title: 登录
+      password:
+        label: 密码
+        placeholder: 请输入密码
+      username:
+        label: 用户名
+        placeholder: 请输入用户名
